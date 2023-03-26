@@ -16,11 +16,26 @@ module.exports = {
       apiKey: process.env.OPENAI_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: input,
-    });
-    const replyText = response.data.choices[0].text;
-    await interaction.reply({ content: replyText, ephemeral: true });
+    try {
+      await interaction.deferReply();
+      const completion = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: input,
+        max_tokens: 1000,
+        //n: 1,
+        //stop: "\n",
+        //temperature: 0.7,
+      });
+      console.log(completion.data.choices[0].text);
+      const replyText = completion.data.choices[0].text;
+      await interaction.editReply({ content: replyText, ephemeral: true });
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.status);
+        console.log(error.response.data);
+      } else {
+        console.log(error.message);
+      }
+    }
   },
 };
