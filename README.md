@@ -2,29 +2,42 @@
 
 This is a very simple code to create a Discord bot that interact with ChatGPT API.
 
-# Features
-
 # Requirement
 
-Node.js v19.8.1
-Discord.js 14.8.0
-OpenAI 3.2.1
+* Node.js
+* Discord.js
+* OpenAI
+* Your own Discord server
 
 # Installation
 
-Install Discord.js Node.js library
+1. Login in to [Discord Developers Portal](https://discord.com/developers/applications) to create an application
+
+2. Create a bot, get an invite URL, and save a token.
+
+3. Paste the invite URL to add the bot to your server.
+
+4. Get a client ID from OAuth2 section
+
+5. Get a server ID from your Discord app. *You must enable the developer mode to get the server ID.
+
+6. Login in to [OpenAI dashboard](https://platform.openai.com).
+
+7. Create a API key and save the key.
+
+8. Install Discord.js Node.js library
 
 ```bash
 npm install discord.js
 ```
 
-Install OpenAI Node.js library
+9. Install OpenAI Node.js library
 
 ```bash
 npm installl openai
 ```
 
-Install Dotenv Node.js library
+10. Install Dotenv Node.js library
 
 ```bash
 npm install dotenv
@@ -32,12 +45,14 @@ npm install dotenv
 
 # Usage
 
-Please create .env file in the root directory and enter the following information.
+Please create .env file in the root directory and enter the bot token, client ID, server ID, and OpenAI API Key information to this file as below.
 
-TOKEN=xxxx
-CLIENT_ID=xxxx
-GUILD_ID=xxxx
-OPENAI_API_KEY=xxx
+```
+TOKEN=xxxx #Discord bot token
+CLIENT_ID=xxxx #Discord client ID
+GUILD_ID=xxxx #Discord server ID
+OPENAI_API_KEY=xxx #OpenAI API key
+```
 
 Start a service.
 
