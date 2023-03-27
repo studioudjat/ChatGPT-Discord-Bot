@@ -1,6 +1,6 @@
 # ChatGPT-Discord-Bot
 
-This is a very simple code to create a Discord bot that interact with ChatGPT API.
+This is a very simple code to create a Discord bot that interact with ChatGPT API. Note that this bot is run in your local environment.
 
 # Requirement
 
