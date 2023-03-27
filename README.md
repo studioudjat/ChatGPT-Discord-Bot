@@ -54,6 +54,12 @@ GUILD_ID=xxxx #Discord server ID
 OPENAI_API_KEY=xxx #OpenAI API key
 ```
 
+Register slash commands
+
+```bash
+node deploy-command.js
+```
+
 Start a service.
 
 ```bash
