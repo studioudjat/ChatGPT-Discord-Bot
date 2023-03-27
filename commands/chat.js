@@ -26,7 +26,10 @@ module.exports = {
         //stop: "\n",
         //temperature: 0.7,
       });
-      console.log(completion.data.choices[0].text);
+
+      //Uncomment here for debugging
+      //console.log(completion.data.choices[0].text);
+
       const replyText = completion.data.choices[0].text;
       await interaction.editReply({ content: replyText, ephemeral: true });
     } catch (error) {
